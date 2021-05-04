@@ -92,6 +92,7 @@ These steps are taken from the [official OctoPrint community](community.octoprin
 ```
 sudo apt update
 sudo apt install python3-pip python3-dev python3-setuptools python3-venv git libyaml-dev build-essential
+sudo apt install git libyaml-dev build-essential
 ```
 
 2. Create the environment needed to install OctoPrint. Create a directory and a Python virtualenv.
@@ -123,29 +124,33 @@ OctoPrint/venv/bin/octoprint serve
 ```
 And try to connect to `http://<pi's IP>:5000`. You should be greeted with the OctoPrint UI.
 
-7. Setup the automatic startup (save OctoPrint as a system service).
-   1. Download the service script
+
+### 7a. Automatic Startup ###
+
+Setup the automatic startup (save OctoPrint as a system service).
+   
+1. Download the service script
 ```
 wget https://github.com/OctoPrint/OctoPrint/raw/master/scripts/octoprint.service
 ```
 
-   2. Modify the script based on your environment
+2. Modify the script based on your environment
 ```
 nano octoprint.service
 ```
 and modify the `User` part with your `USER` and the `ExecStart` part with `/home/USER/OctoPrint/venv/bin/octoprint`
 
-   3. Move the script to its installation folder
+3. Move the script to its installation folder
 ```
 sudo mv octoprint.service /etc/systemd/system/octoprint.service
 ```
 
-   4. Try if everything is correctly set up
+4. Try if everything is correctly set up
 ```
 sudo systemctl start octoprint.service
 ```
 
-   5. If everything works you can enable OctoPrint to start at boot
+5. If everything works you can enable OctoPrint to start at boot
 ```
 sudo systemctl enable octoprint.service
 ```
