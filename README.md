@@ -125,7 +125,7 @@ OctoPrint/venv/bin/octoprint serve
 And try to connect to `http://<pi's IP>:5000`. You should be greeted with the OctoPrint UI.
 
 
-### 7a. Automatic Startup ###
+### 4a. Automatic Startup ###
 
 Setup the automatic startup (save OctoPrint as a system service).
    
@@ -157,4 +157,4 @@ sudo systemctl enable octoprint.service
 
 
 
-## 5. Enjoy it and print! ##
+## 5. Enjoy it and print! :muscle: :fire: ##
